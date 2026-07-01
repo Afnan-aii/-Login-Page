@@ -1,0 +1,153 @@
+
+:root {
+  --bg:          #0c0b10;
+  --bg-elev:     #16141c;
+  --bg-elev-2:   #1e1b25;
+  --line:        #322d3a;
+  --accent-red:  #d4283c;
+  --accent-gold: #e8b84b;
+  --text:        #f3efe6;
+  --text-muted:  #9a95a3;
+
+  --font-display: 'Anton', sans-serif;
+  --font-body:    'Space Grotesk', sans-serif;
+  --font-mono:    'Space Mono', monospace;
+
+  --radius: 4px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+
+/* ==========================================================================
+   LOGIN LAYOUT
+   ========================================================================== */
+.login-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+}
+
+.login-card__title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* ==========================================================================
+   FORM FIELDS
+   ========================================================================== */
+.field { margin-bottom: 16px; }
+
+.field label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.field input {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: var(--accent-gold);
+}
+
+.field input::placeholder {
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   BUTTON
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 16px 28px;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  cursor: pointer;
+  background: var(--accent-red);
+  color: #fff;
+  transition: background 0.15s ease, transform 0.15s ease;
+  margin-bottom: 14px;
+}
+.btn:hover { background: #ea3a4e; }
+.btn:active { transform: scale(0.97); }
+
+/* ==========================================================================
+   FOOTER TEXT / LINKS
+   ========================================================================== */
+.login-card__footnote {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+.login-card__footnote a {
+  color: var(--accent-gold);
+}
+.login-card__footnote a:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  border-top: 1px solid var(--line);
+  padding: 32px 24px;
+  text-align: center;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width: 480px) {
+  .nav__links { display: none; }
+  .login-card { padding: 24px 20px; }
+}
